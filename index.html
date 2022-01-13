@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./fontawesome-free-5.12.0-web/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="forkify-container">
+            <nav>
+                <div class="logo">
+                    <img src="" alt="logo">
+                    <h2>forkify</h2>
+                </div>
+                
+                <div class="input-container">
+                    <input type="text" placeholder=
+                    "Search over 1,000,000 recipes" class="input-space">
+
+                    <button id="btn1" class="btn1"><i class="fas fa-search"></i></button>
+                </div>
+
+                <!-- <div class="favorites">
+                    
+                </div> -->
+
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">
+                        <i class="fab fa-gratipay"></i>
+                    </button>
+                    <div id="myDropdown" class="dropdown-content">
+                        
+                    </div>
+                </div>
+            </nav>
+
+            <div class="page-layout">
+                <section class="left" id="page">
+                    <!-- <button class="prev">Prev</button> -->
+                    
+                </section>
+
+                <section class="middle">
+                    <div>
+
+                    </div>
+                    <div class="img-container" id="img-container">
+                        
+                    </div>
+                    
+                    <div class="servings">
+                        <div class="time">
+                            <button class="serving-btn">
+                                <i class="fas fa-stopwatch"></i>
+                            </button>
+                            <span id="minutes">60 minutes</span>
+                        </div>
+
+                        <div class="serving">
+                            <button class="serving-btn"><i class="fas fa-walking"></i></button>
+
+                            <span id="serving-time">4</span>
+
+                            <button class="serving-btn" title="increase number of servings" onclick="addition()" id="addServings">
+                                <i class="fas fa-plus-circle"></i>
+                            </button>
+
+                            <button class="serving-btn" title="reduce number of servings" onclick="subtraction()" id="subServings">
+                                <i class="fas fa-minus-circle"></i>
+                            </button>
+                        </div>
+
+                        <div id="favorite">
+                            <button class="serving-btn" id="addFavorite" title="Click to add to favorite">
+                                <i class="fab fa-gratipay"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="servings-details" id="servings-details">
+                            
+                        </div>
+
+                        <div class="text-center">
+                            <button class="btn2" title="Add To Shopping Cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                    
+
+                    <!-- <div class="btn-container">
+                        
+                    </div> -->
+
+                    <div class="footer">
+                        <div class="inc">
+                            <h3>how to cook it</h3>
+                        
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Iusto obcaecati quaerat
+                                sint nulla eligendi eaque vero rem mollitia
+                                laudantium odio.
+                            </p>
+                        
+                            <button class="direction" id="directions">
+                                <a href="http://facebook.com">
+                                    directions
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                    
+                </section>
+
+                <section id="right" class="right">
+                    <h2>my shopping list</h2>
+
+                    <div class="inputs" id="inputs">
+                        
+                    </div>
+
+                    
+                </section>
+            </div>
+            
+        </div>
+        
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

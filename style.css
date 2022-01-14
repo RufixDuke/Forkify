@@ -337,7 +337,7 @@ nav {
 
 
 .right {
-    /* width: 30%; */
+    width: 30%;
     margin: 10px;
     display: block;
 }
@@ -496,12 +496,12 @@ nav {
     }
 
     .left .menus h6 {
-    font-size: 8px;
-}
+        font-size: 8px;
+    }
 
-.left .menus p {
-    font-size: 9px;
-}
+    .left .menus p {
+        font-size: 9px;
+    }
 
     .middle {
         width: 45%;

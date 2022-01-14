@@ -197,7 +197,7 @@ function menuClick (id){
 
             displayFavorite.innerHTML += p_tag.innerHTML;
 
-            console.log(displayFavorite);
+            // console.log(displayFavorite);
             
         });
 
@@ -220,22 +220,35 @@ function menuClick (id){
                 total_div.append(tag);
             }
 
-            
-            
-            // var rightInputs = ` 
-            //                 ${detail}
-                            
-            //                 <button class="btn3">
-            //                     <i class="fas fa-times-circle"></i>
-            //                 </button>`
-
-            // tag.innerHTML = rightInputs;
-            // inputsOnRight.innerHTML = tag.innerHTML;
             inputsOnRight.append(total_div)
 
-            console.log(inputsOnRight.innerHTML);
+            // console.log(inputsOnRight.innerHTML);
         })
 
+
+        var footerSide = document.querySelector('.inc');
+
+        var div_tag = document.createElement('div');
+
+        var incSide = `
+                        <p>
+                            This recipe was carefully designed and tested by ${data.recipe.publisher}.
+                            Please check out directions at their website. 
+
+                        </p>
+
+                        <button class="direction" id="directions">
+                            <a href="${data.recipe.publisher_url}">
+                                directions
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </button>`
+
+            div_tag.innerHTML = incSide;
+            footerSide.innerHTML = div_tag.innerHTML;
+
+            console.log(footerSide.innerHTML);
+        
     })
 }
 

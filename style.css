@@ -7,15 +7,13 @@
 body,
 .container {
     background: linear-gradient(to left, #FC9F5B, #FBD1A2);
+    display: flex;
+    justify-content: center;
 }
 
 .forkify-container {
     width: 80%;
-    position: relative;
-    left: 10%;
-    right: 10%;
     background-color: white;
-    margin: 50px;
 }
 
 .logo {
@@ -75,6 +73,72 @@ nav {
     transform: scaleY(0.9);
 }
 
+.dropbtn {
+    background-color: #c7621a;
+    color: white;
+    padding: 6px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #FC9F5B;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    /* display: inline-block; */
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: block;
+    position: absolute;
+    right: 1px;
+    top: 40px;
+    z-index: 1;
+
+}
+
+.dropdown-cont {
+    display: flex;
+    /* position: absolute; */
+    background-color: rgb(238, 235, 235);
+    width: 250px;
+    padding: 12px 16px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-cont img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+/* Links inside the dropdown */
+.details {
+    margin-left: 5px;
+}
+.dropdown-cont h6 {
+    color: #FC9F5B;
+    text-transform: uppercase;
+    display: block;
+}
+
+.dropdown-cont p {
+    font-size: 10px;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-cont a:hover {background-color: rgb(71, 54, 54)}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:none;}
 
 .page-layout {
     display: flex;
@@ -157,7 +221,7 @@ nav {
 .servings-details {
     display: flex;
     background-color: rgb(209, 207, 207);
-    padding: 30px;
+    padding: 5px;
 }
 
 .increment {
@@ -202,10 +266,11 @@ nav {
 
 .btn2 {
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 40px;
     background-color: #FC9F5B;
     border: 0;
     color: white;
+    font-size: 20px;
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 15px;
@@ -293,11 +358,14 @@ nav {
 .shopping {
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    align-items: center;
+    margin: 10px;
 }
 
 .shopping span {
-    border: 2px;
+    border: 1px solid rgb(187, 180, 180) ;
+    padding: 5px;
+    margin-right: 8px;
 }
 
 .shopping p{
@@ -307,167 +375,6 @@ nav {
 .inputs p {
     margin-bottom: 10px;
 }
-
-/* .btn3 {
-    background-color: inherit;
-    border: 0;
-    font-size: 15px;
-} */
-
-/* .shopping i:active {
-    transform: scaleY(0.98);
-} */
-
-/* .underline {
-    color: #c7621a;
-    text-decoration: underline;
-} */
-
-/* .shopping-input {
-    width: 50px;
-    padding: 2px;
-}
-
-.shopping-input:focus{
-    outline: 0;
-} */
-
-
-
-
-
-
-
-
-
-
-.dropbtn {
-    background-color: #c7621a;
-    color: white;
-    padding: 6px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
-/* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
-    background-color: #FC9F5B;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-    /* display: inline-block; */
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: block;
-    position: absolute;
-    right: 1px;
-    top: 40px;
-    z-index: 1;
-
-}
-
-.dropdown-cont {
-    display: flex;
-    /* position: absolute; */
-    background-color: rgb(238, 235, 235);
-    width: 250px;
-    padding: 12px 16px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-.dropdown-cont img {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-}
-
-/* Links inside the dropdown */
-.details {
-    margin-left: 5px;
-}
-.dropdown-cont h6 {
-    color: #FC9F5B;
-    text-transform: uppercase;
-    display: block;
-}
-
-.dropdown-cont p {
-    font-size: 10px;
-    text-transform: uppercase;
-    margin-top: 5px;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-cont a:hover {background-color: rgb(71, 54, 54)}
-
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:flex;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @media (max-width: 768px){
@@ -509,6 +416,7 @@ nav {
     }
 
     .servings-details {
+        display: block;
         padding: 5px;
     }
 
@@ -546,9 +454,13 @@ nav {
     }
 
     .shopping {
-        display: block;
+        display: flex;
         margin: 20px 5px;
         text-align: center;
+    }
+
+    .shopping span {
+        margin-bottom: 5px;
     }
 }
 
@@ -567,6 +479,18 @@ nav {
         left: -38px;
     }
 
+    .left {
+        width: 25%;
+    }
+
+    .middle {
+        width: 50%;
+    }
+
+    .right {
+        width: 25%;
+    }
+
     .left img {
         width: 20px;
         height: 20px;
@@ -581,8 +505,10 @@ nav {
     }
 
     .servings-details {
-        padding: 7px;
-        height: 50rem;
+        display: block;
+        padding: 5px;
+        height: 20em;
+        width: 100%;
     }
 
     .detailsss {
@@ -591,5 +517,23 @@ nav {
 
     .detailsss i{
         font-size: 10px;
+    }
+
+    .shopping p {
+        margin-top: 15px;
+        font-size: 12px;
+    }
+
+    .shopping span {
+        font-size: 12px;
+    }
+
+    .inputs {
+        margin: 0;
+    }
+
+    .shopping {
+        display: block;
+        margin-top: 20px;
     }
 }

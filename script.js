@@ -77,32 +77,10 @@ function menuClick (id){
                     </div>`
 
         imgContainer.innerHTML = middleImg;
-        // var text = document.createElement('div');
-        // text.setAttribute('class', 'img-container');
+
+
+
         
-        // text.innerHTML = middleImg;
-        
-        
-        var servingsDet = `
-                        <div class="serving">
-                            <button class="serving-btn"><i class="fas fa-walking"></i></button>
-                            <span id="serving-time"></span>
-                            <button class="serving-btn" id="addServings">
-                                <i class="fas fa-plus-circle"></i>
-                            </button>
-                            <button class="serving-btn" id="subServings">
-                                <i class="fas fa-minus-circle"></i>
-                            </button>
-                        </div>
-
-                        <div id="favorite">
-                            <button class="serving-btn" id="addFavorite">
-                                <i class="fab fa-gratipay"></i>
-                            </button>
-                        </div>`
-
-
-
         var servingsDetail = document.getElementById('servings-details');
 
         var ingredient = data.recipe.ingredients;

@@ -80,7 +80,7 @@ function menuClick (id){
 
 
 
-        
+
         var servingsDetail = document.getElementById('servings-details');
 
         var ingredient = data.recipe.ingredients;
@@ -182,30 +182,46 @@ function menuClick (id){
 
         const addCart = document.querySelector('.btn2');
         var inputsOnRight = document.getElementsByClassName('inputs')[0];
-        const closeBtn = document.getElementsByClassName('btn3');
+        var closeBtn = document.querySelector('.btn3');
         var detail = document.getElementsByClassName('deta');
 
         addCart.addEventListener('click', function(){
 
-            var total_div = document.createElement('div')
+            var total_div = document.createElement('div');
+
+            let btn = `<button class="btn3"><i class="fas fa-times-circle"></i></button>`;
+
+            // closeBtn = btn;
+            // console.log(closeBtn)
 
             for(a = 0; a < detail.length; a++){
                 let tag = document.createElement('div');
                 tag.setAttribute('class', 'shopping');
 
-                tag.innerHTML = detail[a].innerHTML
+                // var btn = document.createElement('button');
+                // btn.setAttribute('class', 'btn3');
+
+                tag.innerHTML = detail[a].innerHTML + btn;
 
                 total_div.append(tag);
             }
 
             inputsOnRight.append(total_div)
 
+            closeBtn.addEventListener('click', function () {
+                document.body.style.display = 'none'
+            })
             // console.log(inputsOnRight.innerHTML);
         })
 
+        
 
+
+        
+        
+        
+        
         var footerSide = document.querySelector('.inc');
-
         var div_tag = document.createElement('div');
 
         var incSide = `
@@ -225,7 +241,7 @@ function menuClick (id){
             div_tag.innerHTML = incSide;
             footerSide.innerHTML = div_tag.innerHTML;
 
-            console.log(footerSide.innerHTML);
+            // console.log(footerSide.innerHTML);
         
     })
 }
@@ -234,9 +250,7 @@ function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
-// function closeButton(){
-//     inputsOnRight.classList.remove('shopping')
-// }
+
 
 window.onclick = function (event) {
     if (!event.target.matches('.dropbtn')) {

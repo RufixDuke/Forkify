@@ -47,11 +47,11 @@ function leftFetch(query) {
         
         var btns = `
                     <button class="prevBtn" onclick="prevPage()" id="btn_prev">
-                        Prev
+                        <i class="fas fa-chevron-left"></i>
                     </button>
 
                     <button class="nextBtn" onclick="nextPage()" id="btn_next">
-                        Next
+                        <i class="fas fa-chevron-right"></i>
                     </button>
                     `
 

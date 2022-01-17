@@ -173,19 +173,24 @@ nav {
     height: 40px;
 }
 
-.prevBtn,
-.nextBtn {
-    padding: 6px 12px;
+.prevBtn {
+    padding: 6px 14px;
     color: white;
     background-color: #FC9F5B;
     border: 0;
     border-radius: 5px;
-    margin: 5px 2px 5px 0;
+    margin: 5px 0 7px 7px;
     cursor: pointer;
 }
 
-.prevBtn{
-    margin: 5px 0 5px 0;
+.nextBtn{
+    padding: 6px 14px;
+    color: white;
+    background-color: #FC9F5B;
+    border: 0;
+    border-radius: 5px;
+    margin: 0;
+    cursor: pointer;
 }
 
 .prevBtn:active, .nextBtn:active {

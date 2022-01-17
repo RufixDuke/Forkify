@@ -186,11 +186,11 @@ function menuClick (id){
         var detail = document.getElementsByClassName('deta');
 
 
-        let btn = `<button class="btn3" onclick="${closeButton()}><i class="fas fa-times-circle"></i></button>`;
         addCart.addEventListener('click', function(){
 
             var total_div = document.createElement('div');
 
+            var btn = `<button class="btn3"><i class="fas fa-times-circle"></i></button>`;
 
             // closeBtn = btn;
             // console.log(closeBtn)
@@ -211,7 +211,9 @@ function menuClick (id){
 
         })
 
-        
+        // closeBtn.addEventListener('click', function(){
+        //     inputsOnRight[a] = "";
+        // })
         
         
         
@@ -244,9 +246,9 @@ function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
-function closeButton() {
-    document.inputsOnRight.style.display = 'none'
-};
+// function closeButton() {
+//     inputsOnRight.innerHTML = 'uuu';
+// };
 
 
 

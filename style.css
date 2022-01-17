@@ -173,7 +173,29 @@ nav {
     height: 40px;
 }
 
+.prevBtn,
+.nextBtn {
+    padding: 6px 12px;
+    color: white;
+    background-color: #FC9F5B;
+    border: 0;
+    border-radius: 5px;
+    margin: 5px 2px 5px 0;
+    cursor: pointer;
+}
 
+.prevBtn{
+    margin: 5px 0 5px 0;
+}
+
+.prevBtn:active, .nextBtn:active {
+    transform: scaleY(0.9);
+}
+
+.prevBtn:hover,
+.nextBtn:hover {
+    background-color: #c7621a;
+} 
 
 .middle {
     width: 50%;

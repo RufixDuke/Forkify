@@ -42,12 +42,22 @@ function leftFetch(query) {
         text.setAttribute('onclick', `menuClick(${el.recipe_id})`)
         text.innerHTML = singleLeft;
         leftPage.appendChild(text);
+
         })
         
+        var btns = `
+                    <button class="prevBtn" onclick="prevPage()" id="btn_prev">
+                        Prev
+                    </button>
 
-        // `<button onclick="${prevPage()}" id="btn_prev">Prev</button>
-        // <button onclick="${nextPage()}" id="btn_next">Next</button>`
+                    <button class="nextBtn" onclick="nextPage()" id="btn_next">
+                        Next
+                    </button>
+                    `
 
+        var texts = document.createElement('div');
+        texts.innerHTML = btns;
+        leftPage.append(texts)
         
         
     })
@@ -314,6 +324,7 @@ function subtraction() {
 
 
 // PAGINATION
+// var current_page = 1
 
 function firstPage(data, current_page = 1, records_per_page = 10) {
     const start = (current_page - 1) * records_per_page;
@@ -328,66 +339,52 @@ function firstPage(data, current_page = 1, records_per_page = 10) {
     return res;
 }
 
-// function pagination(data){
+function prevPage(current_page) {
+    if (current_page > 1) {
+        current_page--;
+        changePage(current_page);
+    }
+}
 
-//     function prevPage(current_page)
-//     {
-//         if (current_page > 1) {
-//             current_page--;
-//             changePage(current_page);
-//         }
-//     }
+function nextPage(current_page) {
+    if (current_page < numPages()) {
+        current_page++;
+        changePage(current_page);
+    }
+}
+
+function numPages(data, records_per_page) {
+    return Math.ceil(data / records_per_page);
+}
+
+var btn_next = document.querySelector(".nextBtn");
+var btn_prev = document.querySelector(".prevBtn");
+
+function changePage(current_page) {
     
-//     function nextPage()
-//     {
-//         if (current_page < numPages()) {
-//             current_page++;
-//             changePage(current_page);
-//         }
-//     }
+    // var listing_table = document.getElementById("listingTable");
+    // var page_span = document.getElementById("page");
 
-//     function changePage(page)
-//     {
-//         var btn_next = document.getElementById("btn_next");
-//         var btn_prev = document.getElementById("btn_prev");
-//         var listing_table = document.getElementById("listingTable");
-//         var page_span = document.getElementById("page");
+    // Validate page
+    if (current_page < 1) current_page = 1;
+    if (current_page > numPages()) current_page = numPages();
 
-//         // Validate page
-//         if (page < 1) page = 1;
-//         if (page > numPages()) page = numPages();
+    // leftPage.innerHTML = "rrrr";
 
-//         listing_table.innerHTML = "";
+    for (var i = (current_page - 1) * records_per_page; i < (current_page * records_per_page); i++) {
+        leftPage.innerHTML += data[i];
+    }
+    // page_span.innerHTML = current_page;
 
-//         for (var i = (page-1) * records_per_page; i < (page * records_per_page); i++) {
-//             listing_table.innerHTML += data[i] + "<br>";
-//         }
-//         page_span.innerHTML = page;
+    if (current_page == 1) {
+        btn_prev.style.visibility = "hidden";
+    } else {
+        btn_prev.style.visibility = "visible";
+    }
 
-//         if (page == 1) {
-//             btn_prev.style.visibility = "hidden";
-//         } else {
-//             btn_prev.style.visibility = "visible";
-//         }
-
-//         if (page == numPages()) {
-//             btn_next.style.visibility = "hidden";
-//         } else {
-//             btn_next.style.visibility = "visible";
-//         }
-//     }
-
-//     function numPages()
-//     {
-//         return Math.ceil(data.length / records_per_page);
-//     }
-
-//     window.onload = function() {
-//         changePage(1);
-//     };
-// }
-
-
-
-
-
+    if (current_page == numPages()) {
+        btn_next.style.visibility = "hidden";
+    } else {
+        btn_next.style.visibility = "visible";
+    }
+}
